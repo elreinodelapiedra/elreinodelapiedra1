@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Obras realizadas</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .carousel-container {
+      max-width: 100%;
+      height: 600px;
+      overflow: hidden;
+      position: relative;
+    }
+    .carousel-slide {
+      display: flex;
+      width: 800%;
+      animation: slide 40s infinite;
+    }
+    .carousel-slide img {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+    }
+    @keyframes slide {
+      0% { transform: translateX(0%); }
+      12.5% { transform: translateX(-100%); }
+      25% { transform: translateX(-200%); }
+      37.5% { transform: translateX(-300%); }
+      50% { transform: translateX(-400%); }
+      62.5% { transform: translateX(-500%); }
+      75% { transform: translateX(-600%); }
+      87.5% { transform: translateX(-700%); }
+      100% { transform: translateX(0%); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Obras realizadas</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="carousel-container">
+      <div class="carousel-slide">
+        <img src="img/IMG_2161.jpeg" alt="obra1" />
+        <img src="img/8142cc67-15b6-44c6-b361-4c0fc6a9e5a4.jpeg" alt="obra2" />
+        <img src="img/IMG_9812.jpeg" alt="obra3" />
+        <img src="img/1147.jpeg" alt="obra4" />
+        <img src="img/20240517_160324.jpeg" alt="obra5" />
+        <img src="img/26740c3d-9057-4a53-87c3-37c677b7c1fd.jpeg" alt="obra6" />
+        <img src="img/bc80cbb5-9ea7-43d2-ad09-b235cdbb78d9.jpeg" alt="obra7" />
+        <img src="img/e926b079-c649-4344-bde3-2f8108cc3634.jpeg" alt="obra8" />
+      </div>
+    </div>
+  </main>
+</body>
+</html>
