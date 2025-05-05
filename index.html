@@ -1,49 +1,127 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>El Reino de la Piedra</title>
+  <link rel="stylesheet" href="styles.css" />
   <style>
-    body { margin: 0; font-family: sans-serif; background: #f2f2f2; }
-    header { background: #333; color: white; padding: 1em; text-align: center; }
-    .carousel { display: flex; overflow: hidden; max-width: 100%; height: 500px; margin-top: 2em; }
-    .carousel img { width: 100%; object-fit: cover; flex-shrink: 0; transition: transform 1s ease-in-out; }
-    @keyframes slide {
-      0% { transform: translateX(0%); }
-      20% { transform: translateX(-100%); }
-      40% { transform: translateX(-200%); }
-      60% { transform: translateX(-300%); }
-      80% { transform: translateX(-400%); }
-      100% { transform: translateX(0%); }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #1d1d1d;
+      color: white;
     }
-    .carousel-inner {
+    header {
+      padding: 2rem;
+      text-align: center;
+    }
+    nav {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+    }
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero-image img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-top: 1rem;
+    }
+    .section {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .productos img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .carousel {
+      margin-top: 4rem;
+    }
+    .carousel-container {
       display: flex;
-      width: 500%;
-      animation: slide 30s infinite;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
     }
-    footer { text-align: center; padding: 2em; background: #333; color: white; margin-top: 3em; }
+    .carousel-container::-webkit-scrollbar {
+      display: none;
+    }
+    .carousel-slide {
+      flex: 0 0 100%;
+      scroll-snap-align: center;
+      position: relative;
+    }
+    .carousel-slide img {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+    }
+    footer {
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      background: #111;
+      margin-top: 3rem;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>El Reino de la Piedra</h1>
-    <p>Obras Realizadas</p>
+    <img src="logo.png" alt="Logo" width="150" />
+    <nav>
+      <a href="#quienes">Quienes somos</a>
+      <a href="#productos">Productos</a>
+      <a href="catalogo.pdf" target="_blank">Catálogo PDF</a>
+    </nav>
   </header>
-
-  <section class="carousel">
-    <div class="carousel-inner">
-      <img src="img/obra1.jpeg" alt="Obra 1">
-      <img src="img/obra2.jpeg" alt="Obra 2">
-      <img src="img/obra3.jpeg" alt="Obra 3">
-      <img src="img/obra4.jpeg" alt="Obra 4">
-      <img src="img/obra5.jpeg" alt="Obra 5">
+  <div class="hero-image">
+    <img src="hero.jpg" alt="Vista aérea del showroom" />
+  </div>
+  <section class="section" id="quienes">
+    <h1>REVESTIMIENTOS NATURALES PARA OBRAS CON ESTILO</h1>
+    <h2>QUIÉNES SOMOS</h2>
+    <p>Familiar, enengramo familiar. Atendido por sus uvúndos dundos.</p>
+  </section>
+  <section class="section" id="productos">
+    <h2>PRODUCTOS</h2>
+    <div class="productos">
+      <div><img src="piedra1.jpg" alt="Piedra San Luis" /><p>Piedra San Luis<br><small>Stock: Stackanbiö stock</small></p></div>
+      <div><img src="piedra2.jpg" alt="Laja Negra" /><p>Laja Negra<br><small>Stock: blo stock</small></p></div>
+      <div><img src="piedra3.jpg" alt="Travertino Beige" /><p>Trávertino Beige<br><small>Stock: Tiaverxino</small></p></div>
+      <div><img src="piedra4.jpg" alt="Pircá Natural" /><p>Pircá Natural<br><small>Stock: mlõ stock</small></p></div>
+    </div>
+    <div style="margin-top: 2rem;"><a href="catalogo.pdf" style="background:#333;padding:1rem 2rem;color:white;text-decoration:none;border-radius:5px;">Descargar catálogo</a></div>
+  </section>
+  <section class="section carousel">
+    <h2>OBRAS REALIZADAS</h2>
+    <div class="carousel-container">
+      <div class="carousel-slide"><img src="obra1.jpeg" alt="Obra 1" /></div>
+      <div class="carousel-slide"><img src="obra2.jpeg" alt="Obra 2" /></div>
+      <div class="carousel-slide"><img src="obra3.jpeg" alt="Obra 3" /></div>
+      <div class="carousel-slide"><img src="obra4.jpeg" alt="Obra 4" /></div>
+      <div class="carousel-slide"><img src="obra5.jpeg" alt="Obra 5" /></div>
     </div>
   </section>
-
   <footer>
-    © 2025 El Reino de la Piedra
+    <p>Contacto: +54 9 3584415831 · elreinodelapiedra@hotmail.com · Instagram: @elreincelápiedra</p>
   </footer>
 </body>
 </html>
